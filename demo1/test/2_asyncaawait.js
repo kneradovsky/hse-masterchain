@@ -4,7 +4,7 @@ contract("HypeToken2",function(accounts) {
     it("should put funds on the owner account",async function() {
         var instance = await HypeToken.deployed();
         var ownerBalance = await instance.balanceOf(accounts[0]);
-        assert.equal(ownerBalance.valueOf(),1000000,"INITIAL SUPPLY won't load to the owners account");
+        assert.equal(ownerBalance.valueOf(),1000000*100000000,"INITIAL SUPPLY won't load to the owners account");
     });
     it("checkowner",async function(){
         var instance = await HypeToken.deployed();

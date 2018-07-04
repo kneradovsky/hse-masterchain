@@ -10,4 +10,9 @@ contract HypeToken is StandardToken,Ownable() {
 
     uint256 public constant INITIAL_SUPPLY = 10**6 * (10 ** uint256(decimals));
 
+    constructor() public {
+        totalSupply_ = INITIAL_SUPPLY;
+        balances[msg.sender] = INITIAL_SUPPLY;
+        emit Transfer(address(0), msg.sender, INITIAL_SUPPLY);
+    }
 }
